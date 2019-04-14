@@ -1,5 +1,15 @@
-.gradle
-/build/
+#添加本地忽略文件 git update-index --assume-unchanged filename
+#恢复本地忽略文件 git update-index --no-assume-unchanged filename
+
+#idea project files
+build/
+.gradle/
+.idea/
+out/
+rel/
+*.iml
+*.ipr
+*.iws
 
 # Ignore Gradle GUI config
 gradle-app.setting
