@@ -12,8 +12,10 @@ buildscript {
         maven { url 'http://repo1.maven.org/maven2/' }
     }
     dependencies {
-        //springboot插件
+        //springboot插件 bootJar
         classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE'
+//        classpath 'org.springframework.boot:spring-boot-loader-tools:2.1.4.RELEASE'
+//        classpath 'io.spring.gradle:dependency-management-plugin:1.0.7.RELEASE'
     }
 }
 
@@ -24,5 +26,23 @@ repositories {
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web:2.1.4.RELEASE'
     compile 'org.springframework.boot:spring-boot-starter-test:2.1.4.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf:2.1.4.RELEASE'
+    compile 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.1'
+    compile 'tk.mybatis:mapper:4.1.5'
+    compile 'mysql:mysql-connector-java:5.1.46'
     testCompile 'junit:junit:4.12'
+}
+
+//jar {
+//    archivesBaseName = 'login'
+//    version = '1.0.0'
+//    manifest {
+//        attributes 'Main-Class': 'demo.LoginApplication'
+//        attributes 'Class-Path': configurations.compile.collect { '../lib/' + it.name }.join(' ') + ' ' + '../config/'
+//    }
+//}
+
+bootJar {
+    archivesBaseName = 'login'
+    version = ''
 }
