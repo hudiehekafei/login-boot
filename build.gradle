@@ -1,0 +1,30 @@
+group 'com.jd'
+version '1.0-SNAPSHOT'
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot'
+}
+
+sourceCompatibility = 12
+targetCompatibility = 12
+
+buildscript {
+    repositories {
+        maven { url 'http://repo1.maven.org/maven2/' }
+    }
+    dependencies {
+        //springboot插件
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE'
+    }
+}
+
+repositories {
+    maven { url 'http://repo1.maven.org/maven2/' }
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web:2.1.4.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-test:2.1.4.RELEASE'
+    testCompile 'junit:junit:4.12'
+}
