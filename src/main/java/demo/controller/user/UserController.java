@@ -1,7 +1,7 @@
 package demo.controller.user;
 
 import demo.mapper.user.UserMapper;
-import demo.po.User;
+import demo.po.UserPo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +19,7 @@ public class UserController {
 
     @GetMapping("list")
     public String current(Model model) {
-        List<User> userList = userMapper.selectAll();
+        List<UserPo> userList = userMapper.selectAll();
         model.addAttribute("users", userList);
         return "/user/list";
     }
